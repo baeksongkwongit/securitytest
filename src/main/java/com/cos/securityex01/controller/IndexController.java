@@ -57,8 +57,11 @@ public class IndexController {
         return "admin";
     }
 
+    //일반 로그인도 pricipalDetail로 로그인가능
+    //oauth 로그인도 pricipalDetails 로그인가능
     @GetMapping("/user")
-    public @ResponseBody String user(){
+    public @ResponseBody String user(@AuthenticationPrincipal PricialpalDetails pricialpalDetails){
+        System.out.println("pricipalDetails : " + pricialpalDetails.getUser());
         return "user";
     }
 

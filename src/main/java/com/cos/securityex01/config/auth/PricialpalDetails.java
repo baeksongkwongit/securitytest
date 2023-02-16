@@ -21,10 +21,17 @@ import java.util.Map;
 public class PricialpalDetails implements UserDetails , OAuth2User {
     private User user;
 
+    private Map<String,Object>  attribute;
+
+    //일반로그인
     public PricialpalDetails(User user){
         this.user = user;
     }
-
+    //Oauth 로그인
+    public PricialpalDetails(User user, Map<String , Object> attribute){
+        this.user = user;
+        this.attribute = attribute;
+    }
     @Override
     public Map<String, Object> getAttributes() {
         return null;

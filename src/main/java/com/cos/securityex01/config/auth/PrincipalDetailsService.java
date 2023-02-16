@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 //시큐린티 설정ㅇ세서 loginProcessingUrl("/login");
 ///login요청이 오면 자동으로 UserDetailService타입으로 ioc되어있는 loadUserByUsername함수가 실행
+//@함수 종료시 @authenticationPricipal 어노테이션이 만들어진다.
 @Service
 public class PrincipalDetailsService implements UserDetailsService {
     @Autowired
